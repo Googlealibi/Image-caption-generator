@@ -1,0 +1,484 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff5722;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e65100;
+
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    color: #ff5722;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Drag & Drop Upload */
+#dropArea {
+    border: 2px dashed #ff5722;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    background-color: #f8eded75;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+#dropArea:hover {
+    background-color: #e6f7ff;
+    border-color: #e65100;
+    transform: scale(1.02);
+}/* Ensure the image container is always displayed */
+#imageContainer {
+    display: block !important; /* Force display to be block */
+    visibility: visible !important; /* Ensure it's visible */
+    opacity: 1 !important; /* Ensure it's fully opaque */
+    position: relative; /* To avoid z-index issues */
+}
+
+/* Ensure the uploaded image remains visible */
+#uploadedImage {
+    display: block !important; /* Make sure the image is always displayed */
+    max-width: 100%; /* Ensure the image scales responsively */
+    margin: 0 auto; /* Center the image horizontally */
+    visibility: visible !important; /* Keep the image visible */
+    opacity: 1 !important; /* Ensure the image is fully opaque */
+}
+
+/* Additional styles to ensure no overlapping or hiding elements */
+#uploadedImage,
+#imageContainer {
+    z-index: 999; /* Prevent other elements from overlapping */
+    position: relative;
+}
+
+/* Loading Animation */
+#loading {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5722;
+    animation: fade 1s infinite alternate;
+}
+
+
+
+@keyframes fade {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+    margin: 10px;
+    
+    
+}
+
+button:hover {
+    background: linear-gradient(45deg, #e65100, #ff5722);
+    transform: scale(1.05);
+    
+}
+
+/* Section Styling */
+.info-section {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 40px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+/* Headings */
+.info-section h2 {
+    font-size: 26px;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+
+/* List Styles */
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.info-section ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    
+}
+
+.info-section ul li strong {
+    margin-left: 8px;
+}
+
+
+/* How It Works Steps */
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+.step {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    
+}
+
+.step h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ff6600;
+}
+
+.step span {
+    font-size: 30px;
+}
+
+.step p {
+    font-size: 14px;
+    color: #555;
+    
+}
+
+
+/* Steps Design */
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.step {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.step:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Animations for new buttons */
+#downloadText,  #shareCaption {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+#downloadText:hover, #shareCaption:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+/* Toggle switch container */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.4s ease-in-out;
+}
+
+/* Toggle button (slider) */
+.toggle-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+/* Background of the toggle */
+.toggle-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f5f5f5, #dcdcdc);
+    border-radius: 34px;
+    transition: background 0.5s ease-in-out;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Sun/Moon icon */
+.toggle-slider::before {
+    content: "🌕"; /* Sun */
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* When dark mode is activated */
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(45deg, #333, #555);
+}
+
+/* Moon appears on toggle */
+.toggle-switch input:checked + .toggle-slider::before {
+    content: "🌑"; /* Moon */
+    left: 38px;
+    background: #f4c542;
+    box-shadow: 0px 0px 8px rgba(244, 197, 66, 0.8);
+}
+
+/* Night Mode Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0px 0px 10px rgba(244, 197, 66, 0.5); }
+    50% { box-shadow: 0px 0px 20px rgba(244, 197, 66, 0.7); }
+    100% { box-shadow: 0px 0px 10px rgba(244, 197, 66, 0.5); }
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Smooth Background Transition */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+}
+
+/* Container Dark Mode */
+.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+/* Animation for mode switch text */
+#modeText {
+    transition: color 0.5s ease-in-out;
+}
+
+.dark-mode #modeText {
+    color: white;
+}
+/* 📌 Translation Section */
+.translation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🌍 Language Label */
+.translation-section label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 🎨 Stylish Dropdown */
+#languageSelect {
+    width: 200px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background: #fff;
+    border: 2px solid #0072ff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+/* 📌 Make Options Visible */
+#languageSelect option {
+    background-color: white;  /* Background for options */
+    color: black;  /* Text color */
+    font-weight: normal;
+}
+
+/* 🔥 Subtle Hover Effect */
+#languageSelect:hover {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.4);
+}
+
+/* 🌙 Dark Mode */
+.dark-mode .translation-section {
+    background: rgba(50, 50, 50, 0.8);
+    box-shadow: 0px 3px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode label {
+    color: white;
+}
+
+.dark-mode #languageSelect {
+    background: #333;
+    color: white;
+    border: 2px solid #ff4b2b;
+}
+
+.dark-mode #languageSelect:hover {
+    border-color: #ff2e63;
+    box-shadow: 0px 0px 8px rgba(255, 75, 43, 0.4);
+}
+
+/* Fix for dropdown in Dark Mode */
+.dark-mode #languageSelect option {
+    background-color: #444;  
+    color: white;  
+}
+
